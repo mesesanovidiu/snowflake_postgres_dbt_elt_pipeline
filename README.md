@@ -32,7 +32,8 @@ The dataset I used in this project is taken from Kaggle. This is a transnactiona
 ![kaggle_dataset](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/7dceee86-89b9-4d38-84b2-de30a18b1a0b)
 
 # Used Tools
-![Diagram - tools](https://user-images.githubusercontent.com/108272657/235611932-d72c0476-c39d-4196-8a6b-58e61102d107.svg)
+![Concept map - Page 1 Used tools](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/de320838-ac95-4376-81db-0dc275ca89c1)
+
 
 
 ## Client

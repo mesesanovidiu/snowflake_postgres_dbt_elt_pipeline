@@ -9,7 +9,7 @@ The goal of this project is to build a ELT data pipeline that extracts ecommerce
 - Understand how to use python libraries (Psycopg2) to interact with databases;
 - Setup and understand cloud components involved in data storage (S3);
 - Setup IAM policies, roles and integration with Snowflake;
-- Understand how to create tasks to automate various SQL scripts in Snowflake;
+- Understand how to create tasks in Snowflake to automate various SQL scripts;
 - Understand how to use unittesting python libraries (Unittest) and mocking to perform automated testing;
 
 # Contents

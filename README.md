@@ -32,9 +32,7 @@ The dataset I used in this project is taken from Kaggle. This is a transnactiona
 ![kaggle_dataset](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/7dceee86-89b9-4d38-84b2-de30a18b1a0b)
 
 # Used Tools
-![Concept map - Page 1 Used tools](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/de320838-ac95-4376-81db-0dc275ca89c1)
-
-
+![Concept map - Page 1](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/d4cc0941-65f1-4e90-b00e-d7aad1c22584)
 
 ## Client
 The source data for the batch processing pipeline is located in the on a GitHub repo in .csv format. The .csv data will be read by the local python script.

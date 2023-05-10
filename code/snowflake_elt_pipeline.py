@@ -1,10 +1,7 @@
 import psycopg2
-from psycopg2 import sql
 import boto3
 from dotenv import load_dotenv
 import os
-from io import StringIO
-import requests
 import pandas as pd
 from datetime import date
 
@@ -34,7 +31,4 @@ def extract_data_to_staging():
     print(f"File uploaded to s3://{s3_bucket_name}/{s3_staging_key}")
 
 extract_data_to_staging()
-
-
-
 

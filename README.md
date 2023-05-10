@@ -43,10 +43,15 @@ Snowflake: Data warehouse or OLAP database. An integration between S3 and Snowfl
 PowerBI: A dasboard is built to visualize the data from the Snowflake.
 
 # Demo
+- Running Python script
 ![running_elt_snowflake](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/7ff113fe-2e6c-4986-b9ec-79ff33e40fe1)
+- S3 staging
 ![s3_staging](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/3d934485-5a61-4067-97f0-a094d666c0e1)
+- Visualize the files in the staging area (S3) from Snowflake
 ![list_stage](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/18dbc68d-8dba-4c6f-9f3e-152979c829c4)
+- Query sales table in Snowflake
 ![results snow_flake](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/60db7a44-de01-48a2-a933-c54205ce7b3f)
+- Snapshot of database in Snowflake (stages and tasks as well)
 ![schema](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/10afeab6-97d8-4650-ad86-5beb3d4b37b6)
 
 

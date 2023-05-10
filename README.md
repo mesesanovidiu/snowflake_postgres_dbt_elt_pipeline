@@ -2,13 +2,15 @@
 # Postgres -> Snowflake ELT Data pipeline
 
 # Introduction
-The goal of this project is to build a batch data processing pipeline that extracts sales data on a daily basis from a CSV file, stores it in a staging area in a S3 bucket, transforms the data, and then loads the transformed data into a Redshift database, where data is modeled using a star schema. The project also includes a step where SCD type 2 is implemented on dimension tables.
+The goal of this project is to build a ELT pipeline that extracts ecommerce sales data on a daily basis from a Postgres daatbase and stores it in a staging area in a S3 bucket. Based on a storage integration between S3 and Snowflake, as soon as the data is uploaded in S3, Snowflake automatically pulls the data and inserts it into a sales table and creates two separate tables based on it (an invoices table and an items table).
 
 # Objectives of this project
-- Build and understand a data processing framework in AWS used for batch data loading;
-- Setup and understand cloud components involved in data batch processing (S3, Redshift);
-- Understand how to approach or build an data processing pipeline from the ground up;
-- Understand how to track changes in dimension tables using SCD type 2;
+- Build and understand ELT data pipelines;
+- Understand how to use python libraries (Psycopg2) to interact with databases;
+- Setup and understand cloud components involved in data storage (S3);
+- Setup IAM policy, role and integration with Snowflake;
+- Understand how to create tasks to automate various SQL scripts in Snowflake;
+- Understand how to use unittesting python libraries (Unittest) and mocking to perform automated testing;
 
 # Contents
 
@@ -17,10 +19,8 @@ The goal of this project is to build a batch data processing pipeline that extra
   - [Client](#client)
   - [Storage](#storage)
   - [Orchestration](#orchestration)
-  - [Visualization](#visualization)
 - [Pipelines](#pipelines)
   - [Batch Processing](#batch-processing)
-  - [Visualizations](#visualizations)
 - [Demo](#demo)
 - [Conclusion](#conclusion)
 - [Appendix](#appendix)

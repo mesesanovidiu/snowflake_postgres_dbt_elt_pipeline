@@ -30,7 +30,7 @@ The dataset I used in this project is taken from Kaggle. This is a transnactiona
 ![kaggle_dataset](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/7dceee86-89b9-4d38-84b2-de30a18b1a0b)
 
 # Used Tools
-![Concept map - Page 1](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/d4cc0941-65f1-4e90-b00e-d7aad1c22584)
+![Concept map - Page 1 (1)](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/59583d09-f6f4-4bcf-b7c3-4a5b4fb517dc)
 
 ## Client
 The source data for the ELT pipeline is located in a transactional database (OLTP) stored in Postgres. The 'ecommerce_sales' table be read by the local python script using psycopg2 library. On a regularly basis, data is pulled from Postgres and stored in S3 in .csv files.

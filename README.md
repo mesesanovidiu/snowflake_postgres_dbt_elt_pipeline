@@ -18,9 +18,7 @@ The goal of this project is to build a ELT data pipeline that extracts ecommerce
 - [Used Tools](#used-tools)
   - [Client](#client)
   - [Storage](#storage)
-  - [Orchestration](#orchestration)
-- [Pipelines](#pipelines)
-  - [Batch Processing](#batch-processing)
+  - [Data Warehouse](#datawarehouse)
 - [Demo](#demo)
 - [Conclusion](#conclusion)
 - [Appendix](#appendix)
@@ -35,29 +33,19 @@ The dataset I used in this project is taken from Kaggle. This is a transnactiona
 ![Concept map - Page 1](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/d4cc0941-65f1-4e90-b00e-d7aad1c22584)
 
 ## Client
-The source data for the batch processing pipeline is located in the on a GitHub repo in .csv format. The .csv data will be read by the local python script.
+The source data for the ELT pipeline is located in a transactional database (OLTP) stored in Postgres. The 'ecommerce_sales' table be read by the local python script using psycopg2 library. On a regularly basis, data is pulled from Postgres and stored in S3 in .csv files.
 ## Storage
 S3: Amazon Simple Storage Service is a service that acts as a data lake in this project. Source sales transactions are hosted here for batch/bulk load.
-Redshift: Datawareouse or OLAP database. A star schema has been built for this project on this relational database.
-## Orchestration
-Apache Airflow is used to orchestrate this data pipeline.
+
+# Data Warehouse
+Snowflake: Data warehouse or OLAP database. An integration between S3 and Snowflake has been made and Snowflake is able to see whenever a file is placed in a the staging bucket in S3. Using tasks, the data ingestion from S3 is automated (when a file is uploaded in S3, it is automatically ingested in Snowflake). Furthermore, based on the ecommerce sales table that is being created, two additional tables are created (an invoices table and a products table).
+
 ## Visualization
-Grafana: Dasboards are built to visualize the data from the Redshift data warehouse and S3.
-
-# Pipelines
-## Batch Processing
-S3 Data Lake: Here are the sales transactions that are dumped in the .csv format.
-
-Amazon Redshift: Redshift is Amazon's analytics database, and is designed to crunch large amounts of data as a data warehouse. A redshift cluster has been created for this project as a OLAP Database. Once the database has been created, a staging table has been created. Then the redshift copy command has been used to copy the .csv data from S3 to the created table. Then the star schema tables has been created in the data warehouse and loaded by the data warehouse procedure. Changes in products and customers dimensions are tracked using SCD type 2.
-
---- Orchestration to be completed ---
-
-## Visualizations
--- To be completed --
+PowerBI: A dasboard is built to visualize the data from the Snowflake.
 
 # Demo
 ![aws - running command](https://user-images.githubusercontent.com/108272657/236005081-e09af722-f1c9-4111-b6da-4e4917f137db.PNG)
 ![capture project aws](https://user-images.githubusercontent.com/108272657/236005110-2193e677-905e-40a3-bb95-9512b6704952.PNG)
 
 # Conclusion
-Through the completion of this data engineering project, I have gained experience in the utilization of fundamental AWS services, including S3 and Redshift. This hands-on experience has enabled me to develop a deeper understanding of the AWS infrastructure and its capabilities for processing large-scale datasets. As a result of this project, I have gained the confidence and competence to effectively execute future data engineering projects within the AWS ecosystem.
+Through the completion of this data engineering project, I have gained experience in creating policies/roles using IAM and using S3 and Snowflake. This hands-on experience has enabled me to develop a deeper understanding of Snowflake and its capabilities for integration with S3 for automating data ingestion. As a result of this project, I have gained the confidence and competence to effectively build an ELT pipeline, as well as interacting with databases using python libraries.

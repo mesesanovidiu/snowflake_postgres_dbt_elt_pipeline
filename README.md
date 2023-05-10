@@ -43,8 +43,12 @@ Snowflake: Data warehouse or OLAP database. An integration between S3 and Snowfl
 PowerBI: A dasboard is built to visualize the data from the Snowflake.
 
 # Demo
-![aws - running command](https://user-images.githubusercontent.com/108272657/236005081-e09af722-f1c9-4111-b6da-4e4917f137db.PNG)
-![capture project aws](https://user-images.githubusercontent.com/108272657/236005110-2193e677-905e-40a3-bb95-9512b6704952.PNG)
+![running_elt_snowflake](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/7ff113fe-2e6c-4986-b9ec-79ff33e40fe1)
+![s3_staging](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/3d934485-5a61-4067-97f0-a094d666c0e1)
+![list_stage](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/18dbc68d-8dba-4c6f-9f3e-152979c829c4)
+![results snow_flake](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/60db7a44-de01-48a2-a933-c54205ce7b3f)
+![schema](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/10afeab6-97d8-4650-ad86-5beb3d4b37b6)
+
 
 # Conclusion
 Through the completion of this data engineering project, I have gained experience in creating policies/roles using IAM and using S3 and Snowflake. This hands-on experience has enabled me to develop a deeper understanding of Snowflake and its capabilities for integration with S3 for automating data ingestion. As a result of this project, I have gained the confidence and competence to effectively build an ELT pipeline, as well as interacting with databases using python libraries.

@@ -27,7 +27,7 @@ The goal of this project is to build a ELT data pipeline that extracts ecommerce
 
 
 # The Data Set
-The dataset I used in this project is taken from Kaggle. This is a transnactional data set which contains all the sales transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based online retail.The company mainly sells unique all-occasion gifts. It covers 25900 unique invoices from a pool of 18300 customers. The dataset contains details about the customers and products.
+The dataset I used in this project is taken from Kaggle. This is a transnactional dataset which contains all the sales transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based online retail. The company mainly sells unique all-occasion gifts. It covers 25900 unique invoices from a pool of 18300 customers. The dataset contains details about the customers and products.
 
 ![kaggle_dataset](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/7dceee86-89b9-4d38-84b2-de30a18b1a0b)
 

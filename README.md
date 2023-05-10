@@ -21,7 +21,6 @@ The goal of this project is to build an ELT data pipeline that extracts ecommerc
   - [Data Warehouse](#datawarehouse)
 - [Demo](#demo)
 - [Conclusion](#conclusion)
-- [Appendix](#appendix)
 
 
 # The Data Set

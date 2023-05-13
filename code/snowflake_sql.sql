@@ -54,23 +54,23 @@ create or replace task ECOMMERCE.RAW.clean_stage
 	as remove @S3STAGE
               ;
 
-create or replace task ECOMMERCE.RAW.create_invoice_table
-    warehouse=COMPUTE_WH
-    schedule='1 MINUTE'
-    as CREATE OR REPLACE TABLE ECOMMERCE.RAW.INVOICES AS( SELECT DISTINCT CUSTOMERID, COUNTRY, INVOICEDATE, INVOICENO
-               FROM ECOMMERCE.RAW.SALES
-              );
-create or replace task ECOMMERCE.RAW.create_items_table
-    warehouse=COMPUTE_WH
-    after ECOMMERCE.RAW.create_invoice_table
-    as CREATE OR REPLACE TABLE ECOMMERCE.RAW.ITEMS AS ( SELECT STOCKCODE, DESCRIPTION, UNITPRICE,QUANTITY, INVOICENO
-               FROM ECOMMERCE.RAW.SALES
-              );
+-- create or replace task ECOMMERCE.RAW.create_invoice_table
+--     warehouse=COMPUTE_WH
+--     schedule='1 MINUTE'
+--     as CREATE OR REPLACE TABLE ECOMMERCE.RAW.INVOICES AS( SELECT DISTINCT CUSTOMERID, COUNTRY, INVOICEDATE, INVOICENO
+--                FROM ECOMMERCE.RAW.SALES
+--               );
+-- create or replace task ECOMMERCE.RAW.create_items_table
+--     warehouse=COMPUTE_WH
+--     after ECOMMERCE.RAW.create_invoice_table
+--     as CREATE OR REPLACE TABLE ECOMMERCE.RAW.ITEMS AS ( SELECT STOCKCODE, DESCRIPTION, UNITPRICE,QUANTITY, INVOICENO
+--                FROM ECOMMERCE.RAW.SALES
+--               );
 
 ALTER TASK ECOMMERCE.RAW.clean_stage RESUME;
 ALTER TASK ECOMMERCE.RAW.import_from_stage RESUME;
-ALTER TASK ECOMMERCE.RAW.create_items_table RESUME;
-ALTER TASK ECOMMERCE.RAW.create_invoice_table RESUME;
+-- ALTER TASK ECOMMERCE.RAW.create_items_table RESUME;
+-- ALTER TASK ECOMMERCE.RAW.create_invoice_table RESUME;
 
 list @s3stage;
 

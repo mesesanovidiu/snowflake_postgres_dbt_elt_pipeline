@@ -2,7 +2,11 @@
 # Postgres -> S3 -> DBT -> Snowflake ELT Data pipeline
 
 # Introduction
-The goal of this project is to build an ELT data pipeline that extracts ecommerce sales data on a daily basis from a Postgres database and stores it in a staging area in a S3 bucket. Based on a storage integration between S3 and Snowflake, as soon as the data is uploaded in S3, Snowflake automatically pulls and inserts it into a raw schema which is then further transformed using dbt and moved to a dev schema after several quality checks have been passed. Using dbt, two separate tables based on sales data are created (an invoices table and a products table). Furthermore, a CI/CD pipeline is created in which dbt cloud is connected to this github repo and at each pull request made from the 'main' branch, a 'dbt run' and 'dbt test' command is run, which validates the changes made.
+The objective of this project is to establish an ELT data pipeline for extracting daily ecommerce sales data from a Postgres database. The extracted data is then stored in a staging area within an S3 bucket. By leveraging the integration capabilities between S3 and Snowflake, the data is automatically pulled into a raw schema in Snowflake as soon as it is uploaded to S3.
+
+The raw data within Snowflake undergoes subsequent transformations using dbt (data build tool). Once the necessary quality checks are successfully completed, the transformed data is migrated to a development schema. Within dbt, two distinct tables are created based on the sales data: an invoices table and a products table.
+
+To streamline the development process, a CI/CD pipeline is implemented. This involves connecting dbt Cloud to the GitHub repository. Upon each pull request made from the 'main' branch, the pipeline triggers the execution of 'dbt run' and 'dbt test' commands. These commands validate the changes made and ensure the integrity and reliability of the data.
 
 # Objectives of this project
 - Build and understand ELT data pipelines;

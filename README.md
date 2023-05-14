@@ -25,11 +25,12 @@ The goal of this project is to build an ELT data pipeline that extracts ecommerc
 
 # The Data Set
 The dataset I used in this project is taken from Kaggle. This is a transnactional dataset which contains all the sales transactions occurring between 2010-12-01 and 2011-12-01 for a UK-based online retail. The company mainly sells unique all-occasion gifts. It covers 25,900 unique invoices from a pool of 18,300 customers. The dataset contains details about the customers and products.
+![kaggle_dataset](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/c39649b1-741b-4a70-bee0-5f227ea549c4)
 
-![kaggle_dataset](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/7dceee86-89b9-4d38-84b2-de30a18b1a0b)
 
 # Used Tools
-![Concept map - Page 1 (1)](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/59583d09-f6f4-4bcf-b7c3-4a5b4fb517dc)
+![Concept map - Page 1 (1)](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/bb2b4f00-009a-4d78-9929-155220a84694)
+
 
 ## Client
 The source data for the ELT pipeline is located in a transactional database (OLTP) stored in Postgres. The 'ecommerce_sales' table be read by the local python script using psycopg2 library. On a regularly basis, data is pulled from Postgres and stored in S3 in .csv files.
@@ -44,15 +45,15 @@ PowerBI: A dasboard is built to visualize the data from the Snowflake.
 
 # Demo
 - Running Python script
-![running_elt_snowflake](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/7ff113fe-2e6c-4986-b9ec-79ff33e40fe1)
+![running_elt_snowflake](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/f99c033c-e408-4331-bfe8-54878a819640)
 - S3 staging
-![s3_staging](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/3d934485-5a61-4067-97f0-a094d666c0e1)
+![s3_staging](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/9477c495-0230-4ea4-aa0a-19717cfddffb)
 - Visualize the files in the staging area (S3) from Snowflake
-![list_stage](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/18dbc68d-8dba-4c6f-9f3e-152979c829c4)
+![list_stage](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/ac0d97a5-b6d2-4229-a63f-d9d7c3ad0196)
 - Query sales table in Snowflake
-![results snow_flake](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/60db7a44-de01-48a2-a933-c54205ce7b3f)
+![results snow_flake](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/20fe06be-4a04-44fd-a67b-a1bca110a3d8)
 - Snapshot of database in Snowflake (stages and tasks as well)
-![schema](https://github.com/mesesanovidiu/snowflake_postgres_elt_pipeline/assets/108272657/10afeab6-97d8-4650-ad86-5beb3d4b37b6)
+![schema](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/bd92394d-3a12-4959-b4ed-a7aaf7bba358)
 
 
 # Conclusion

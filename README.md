@@ -1,5 +1,5 @@
 
-# Postgres -> S3 -> Snowflake ELT Data pipeline
+# Postgres -> S3 -> DBT -> Snowflake ELT Data pipeline
 
 # Introduction
 The goal of this project is to build an ELT data pipeline that extracts ecommerce sales data on a daily basis from a Postgres database and stores it in a staging area in a S3 bucket. Based on a storage integration between S3 and Snowflake, as soon as the data is uploaded in S3, Snowflake automatically pulls and inserts it into a sales table and creates two separate tables based on it (an invoices table and a products table).

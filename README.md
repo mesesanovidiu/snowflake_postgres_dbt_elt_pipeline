@@ -2,7 +2,7 @@
 # Postgres -> S3 -> DBT -> Snowflake ELT Data pipeline
 
 # Introduction
-The goal of this project is to build an ELT data pipeline that extracts ecommerce sales data on a daily basis from a Postgres database and stores it in a staging area in a S3 bucket. Based on a storage integration between S3 and Snowflake, as soon as the data is uploaded in S3, Snowflake automatically pulls and inserts it into a sales table and creates two separate tables based on it (an invoices table and a products table).
+The goal of this project is to build an ELT data pipeline that extracts ecommerce sales data on a daily basis from a Postgres database and stores it in a staging area in a S3 bucket. Based on a storage integration between S3 and Snowflake, as soon as the data is uploaded in S3, Snowflake automatically pulls and inserts it into a raw schema which is then further transformed using dbt and moved to a dev schema after several quality checks have been passed. Using dbt, two separate tables based on sales data are created (an invoices table and a products table). Furthermore, a CI/CD pipeline is created in which dbt cloud is connected to this github repo and at each pull request made from the 'main' branch, a 'dbt run' and 'dbt test' command is run, which validates the changes made.
 
 # Objectives of this project
 - Build and understand ELT data pipelines;
@@ -10,6 +10,8 @@ The goal of this project is to build an ELT data pipeline that extracts ecommerc
 - Setup and understand cloud components involved in data storage (S3);
 - Setup IAM policies, roles and integration with Snowflake;
 - Understand how to create tasks in Snowflake to automate various SQL scripts;
+- Build and understand dbt models and data quality testing in dbt;
+- Build a CI/CD pipeline which automatically tests the code when a pull request is made from the 'main' branch;
 - Understand how to use unittesting python libraries (Unittest) and mocking to perform automated testing;
 
 # Contents
@@ -19,6 +21,7 @@ The goal of this project is to build an ELT data pipeline that extracts ecommerc
   - [Client](#client)
   - [Storage](#storage)
   - [Data Warehouse](#datawarehouse)
+  - [Transform](#transform)
 - [Demo](#demo)
 - [Conclusion](#conclusion)
 

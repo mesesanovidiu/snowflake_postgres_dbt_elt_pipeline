@@ -9,5 +9,3 @@ sources:
         loaded_at_field: INVOICEDATE
         freshness:
           warn_after: {count: 1, period: day}
-
-#a

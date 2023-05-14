@@ -50,13 +50,12 @@ In Snowflake, which serves as a data warehouse or OLAP database, an integration 
 The raw data stored in Snowflake undergoes subsequent transformations utilizing dbt (data build tool). After successfully passing several quality checks and data freshness checks, the transformed data is migrated to a dedicated development schema. Within dbt, two distinct tables are created based on the sales data: an invoices table and a products table.
 
 To enhance the development workflow, a CI/CD pipeline is implemented, integrating dbt Cloud with the GitHub repository. Whenever a pull request is initiated from the 'main' branch, the pipeline automatically triggers the execution of 'dbt run' and 'dbt test' commands. These commands ensure the validation of the implemented changes and reliability of the data. By leveraging this automated process, the project streamlines development activities and ensures the consistent quality of the transformed data.
+- dbt run
 ![dbt run](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/91c4b770-8db2-4ff0-814b-9e77d03ba298)
+- dbt test
 ![dbt test](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/b890816a-e801-49c7-8e6d-d3c79f37a518)
-
-
-
-## Visualization
-PowerBI: A dasboard is built to visualize the data from the Snowflake.
+- dbt source freshness
+![dbt source freshness](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/15c585a3-9dd3-4a49-ba8d-3c617f74b4ee)
 
 # Demo
 - Running Python script
@@ -67,6 +66,10 @@ PowerBI: A dasboard is built to visualize the data from the Snowflake.
 ![list_stage](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/ac0d97a5-b6d2-4229-a63f-d9d7c3ad0196)
 - Query sales table in Snowflake
 ![results snow_flake](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/20fe06be-4a04-44fd-a67b-a1bca110a3d8)
+- CI/CD pipeline
+![CI-CD1](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/992ed644-ad05-4a85-808c-c3bb017dd624)
+![CD-CD2](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/494baf20-7d0d-4f26-ac39-d08501f847f7)
+
 - Snapshot of database in Snowflake (stages and tasks as well)
 ![schema](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/bd92394d-3a12-4959-b4ed-a7aaf7bba358)
 

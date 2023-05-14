@@ -1,5 +1,5 @@
 
-# Postgres -> S3 -> Snowflake -> DBT ELT Data pipeline
+# Postgres -> S3 -> Snowflake -> dbt ELT Data pipeline
 
 # Introduction
 The objective of this project is to establish an ELT data pipeline for extracting daily ecommerce sales data from a Postgres database. The extracted data is then stored in a staging area within an S3 bucket. By leveraging the integration capabilities between S3 and Snowflake, the data is automatically pulled into a raw schema in Snowflake as soon as it is uploaded to S3.
@@ -44,9 +44,15 @@ The source data for the ELT pipeline is located in a transactional database (OLT
 S3: Amazon Simple Storage Service is a service that acts as a data lake in this project. Source sales transactions are hosted here for batch/bulk load.
 
 # Data Warehouse
-Snowflake: Data warehouse or OLAP database. An integration between S3 and Snowflake has been made and Snowflake is able to see whenever a file is placed in a the staging bucket in S3. Using tasks, the data ingestion from S3 is automated (when a file is uploaded in S3, it is automatically ingested in Snowflake). Furthermore, based on the ecommerce sales table that is being created, two additional tables (an invoices table and a products table) are created and automatically updated at a pre-defined interval. After the data from staging area has been ingested, the staging table is automatically dropped by a 'snowflake task'.
-
 In Snowflake, which serves as a data warehouse or OLAP database, an integration has been established with S3. This integration enables Snowflake to detect whenever a file is added to the staging bucket in S3. To automate data ingestion, tasks are utilized, allowing for seamless ingestion of data from S3 into Snowflake. Whenever a file is uploaded to S3, it is automatically ingested into Snowflake in a 'RAW' schema. Once the data from the staging area is successfully ingested, a 'snowflake task' is triggered to automatically drop the staging table.
+
+# Transform
+The raw data stored in Snowflake undergoes subsequent transformations utilizing dbt (data build tool). After successfully passing several quality checks and data freshness checks, the transformed data is migrated to a dedicated development schema. Within dbt, two distinct tables are created based on the sales data: an invoices table and a products table.
+
+To enhance the development workflow, a CI/CD pipeline is implemented, integrating dbt Cloud with the GitHub repository. Whenever a pull request is initiated from the 'main' branch, the pipeline automatically triggers the execution of 'dbt run' and 'dbt test' commands. These commands ensure the validation of the implemented changes and reliability of the data. By leveraging this automated process, the project streamlines development activities and ensures the consistent quality of the transformed data.
+![dbt run](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/91c4b770-8db2-4ff0-814b-9e77d03ba298)
+![dbt test](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/b890816a-e801-49c7-8e6d-d3c79f37a518)
+
 
 
 ## Visualization

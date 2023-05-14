@@ -71,8 +71,8 @@ To enhance the development workflow, a CI/CD pipeline is implemented, integratin
 ![CD-CD2](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/494baf20-7d0d-4f26-ac39-d08501f847f7)
 
 - Snapshot of database in Snowflake (stages and tasks as well)
-![schema](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/bd92394d-3a12-4959-b4ed-a7aaf7bba358)
+![Schema2](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/71807cca-3c99-4812-8a6f-8031b2f97152)
 
 
 # Conclusion
-Through the completion of this data engineering project, I have gained experience in creating policies/roles using IAM and using S3 and Snowflake. This hands-on experience has enabled me to develop a deeper understanding of Snowflake and its capabilities for integration with S3 for automating data ingestion. As a result of this project, I have gained the confidence and competence to effectively build an ELT pipeline, as well as interacting with databases using python libraries.
+Through the completion of this data engineering project, I have gained experience in creating policies/roles using IAM, creating CI/CD pipelines and using S3, Snowflake and dbt. This hands-on experience has enabled me to develop a deeper understanding of Snowflake and its capabilities for integration with S3 for automating data ingestion as well as creating data transformations and quality checks in dbt. As a result of this project, I have gained the confidence and competence to effectively build an ELT pipeline, create a CI/CD pipeline, as well as interact with databases using python libraries.

@@ -1,5 +1,5 @@
 
-# Postgres -> S3 -> DBT -> Snowflake ELT Data pipeline
+# Postgres -> S3 -> Snowflake -> DBT ELT Data pipeline
 
 # Introduction
 The objective of this project is to establish an ELT data pipeline for extracting daily ecommerce sales data from a Postgres database. The extracted data is then stored in a staging area within an S3 bucket. By leveraging the integration capabilities between S3 and Snowflake, the data is automatically pulled into a raw schema in Snowflake as soon as it is uploaded to S3.
@@ -38,14 +38,16 @@ The dataset I used in this project is taken from Kaggle. This is a transnactiona
 # Used Tools
 ![Concept map - Page 1 (2)](https://github.com/mesesanovidiu/snowflake_postgres_dbt_elt_pipeline/assets/108272657/4dff22e7-2135-4cfe-a28a-a455f9f353fc)
 
-
 ## Client
-The source data for the ELT pipeline is located in a transactional database (OLTP) stored in Postgres. The 'ecommerce_sales' table be read by the local python script using psycopg2 library. On a regularly basis, data is pulled from Postgres and stored in S3 in .csv files.
+The source data for the ELT pipeline is located in a transactional database (OLTP) stored in Postgres. The 'ecommerce_sales' table is read by the local python script using psycopg2 library. On a regularly basis, data is pulled from Postgres and stored in S3 in .csv files.
 ## Storage
 S3: Amazon Simple Storage Service is a service that acts as a data lake in this project. Source sales transactions are hosted here for batch/bulk load.
 
 # Data Warehouse
 Snowflake: Data warehouse or OLAP database. An integration between S3 and Snowflake has been made and Snowflake is able to see whenever a file is placed in a the staging bucket in S3. Using tasks, the data ingestion from S3 is automated (when a file is uploaded in S3, it is automatically ingested in Snowflake). Furthermore, based on the ecommerce sales table that is being created, two additional tables (an invoices table and a products table) are created and automatically updated at a pre-defined interval. After the data from staging area has been ingested, the staging table is automatically dropped by a 'snowflake task'.
+
+In Snowflake, which serves as a data warehouse or OLAP database, an integration has been established with S3. This integration enables Snowflake to detect whenever a file is added to the staging bucket in S3. To automate data ingestion, tasks are utilized, allowing for seamless ingestion of data from S3 into Snowflake. Whenever a file is uploaded to S3, it is automatically ingested into Snowflake in a 'RAW' schema. Once the data from the staging area is successfully ingested, a 'snowflake task' is triggered to automatically drop the staging table.
+
 
 ## Visualization
 PowerBI: A dasboard is built to visualize the data from the Snowflake.
